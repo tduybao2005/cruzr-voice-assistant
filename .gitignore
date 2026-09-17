@@ -1,5 +1,16 @@
-# Secrets
+# Secrets. The globs cover loose key files that tend to land in the project
+# root, not just .env — one slipped into a commit and had to be stripped out.
 .env
+key-*.txt
+*.pem
+*.p12
+*.jks
+credentials*.json
+
+# Editor and local tooling state
+.claude/
+.idea/
+.vscode/
 
 # Python
 __pycache__/
