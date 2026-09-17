@@ -45,7 +45,7 @@ jobs:
           # data, not documentation, so they are excluded. `xxxxxxxx` placeholders
           # in .env.example are filtered out rather than exempting the whole file.
           hits=$(git grep -nIE '/home/[a-z0-9_-]+/|dataset-[A-Za-z0-9]{20,}|gsk_[A-Za-z0-9]{20,}' \
-                   -- . ':!cadebot-lora' ':!dataset' ':!docs/superpowers' \
+                   -- . ':!cadebot-lora' ':!dataset' \
                  | grep -v 'xxxxxxxx' || true)
           if [ -n "$hits" ]; then
             echo "$hits"

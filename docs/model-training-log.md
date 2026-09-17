@@ -1,6 +1,5 @@
 # Cadebot Fine-tune — Nhật ký thực hiện
 
-
 > Ngày: 2026-06-19
 > Mục tiêu: Fine-tune Qwen2.5-3B-Instruct thành Cadebot — trợ lý robot phục vụ tại Cà Phê Mộc Lam
 
