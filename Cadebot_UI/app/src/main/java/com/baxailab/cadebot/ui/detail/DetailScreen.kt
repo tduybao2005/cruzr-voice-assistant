@@ -33,7 +33,7 @@ fun DetailScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam)
+            .background(MocLamFoam)
     ) {
         // LazyColumn để scroll dọc hoạt động đúng dù có row scroll ngang bên trong
         LazyColumn(modifier = Modifier.weight(1f)) {
@@ -44,7 +44,7 @@ fun DetailScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(200.dp)
-                        .background(Brush.verticalGradient(listOf(Mộc LamCoffee, Mộc LamCaramel)))
+                        .background(Brush.verticalGradient(listOf(MocLamCoffee, MocLamCaramel)))
                         .statusBarsPadding()
                 ) {
                     IconButton(
@@ -54,7 +54,7 @@ fun DetailScreen(
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Quay lại",
-                            tint = Mộc LamOnDark
+                            tint = MocLamOnDark
                         )
                     }
                     Text(
@@ -76,20 +76,20 @@ fun DetailScreen(
                         Text(
                             text = item.name,
                             style = MaterialTheme.typography.headlineLarge,
-                            color = Mộc LamEspresso,
+                            color = MocLamEspresso,
                             modifier = Modifier.weight(1f)
                         )
                         PriceText(amount = uiState.unitPrice, style = MaterialTheme.typography.headlineMedium)
                     }
                     Spacer(Modifier.height(8.dp))
-                    Text(text = item.description, style = MaterialTheme.typography.bodyLarge, color = Mộc LamGray)
+                    Text(text = item.description, style = MaterialTheme.typography.bodyLarge, color = MocLamGray)
                     Spacer(Modifier.height(12.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        if (item.attributes.caffeine) Mộc LamTag("Có caffeine") else Mộc LamTag("Không caffeine")
-                        if (item.tags.contains("best_seller")) Mộc LamTag("⭐ Best Seller")
+                        if (item.attributes.caffeine) MocLamTag("Có caffeine") else MocLamTag("Không caffeine")
+                        if (item.tags.contains("best_seller")) MocLamTag("⭐ Best Seller")
                     }
                 }
-                HorizontalDivider(color = Mộc LamLatte, modifier = Modifier.padding(horizontal = 20.dp))
+                HorizontalDivider(color = MocLamLatte, modifier = Modifier.padding(horizontal = 20.dp))
             }
 
             // Phục vụ (Nóng / Lạnh)
@@ -176,18 +176,18 @@ fun DetailScreen(
             // Ghi chú
             item {
                 Column(modifier = Modifier.padding(horizontal = 20.dp, vertical = 4.dp)) {
-                    HorizontalDivider(color = Mộc LamLatte)
+                    HorizontalDivider(color = MocLamLatte)
                     Spacer(Modifier.height(16.dp))
                     SectionLabel("Ghi chú (tuỳ chọn)")
                     OutlinedTextField(
                         value = uiState.note,
                         onValueChange = viewModel::setNote,
                         modifier = Modifier.fillMaxWidth(),
-                        placeholder = { Text("Ví dụ: không sữa, dị ứng đậu phộng...", color = Mộc LamGray) },
+                        placeholder = { Text("Ví dụ: không sữa, dị ứng đậu phộng...", color = MocLamGray) },
                         shape = RoundedCornerShape(12.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Mộc LamEspresso,
-                            unfocusedBorderColor = Mộc LamLatte
+                            focusedBorderColor = MocLamEspresso,
+                            unfocusedBorderColor = MocLamLatte
                         ),
                         singleLine = true
                     )
@@ -211,7 +211,7 @@ fun DetailScreen(
                     onDecrease = { viewModel.setQuantity(uiState.quantity - 1) },
                     onIncrease = { viewModel.setQuantity(uiState.quantity + 1) }
                 )
-                Mộc LamPrimaryButton(
+                MocLamPrimaryButton(
                     text = "Thêm  ${String.format("%,d", uiState.totalPrice)}đ",
                     onClick = { viewModel.buildCartItem()?.let { onAddToCart(it) } },
                     modifier = Modifier.weight(1f).padding(start = 16.dp),

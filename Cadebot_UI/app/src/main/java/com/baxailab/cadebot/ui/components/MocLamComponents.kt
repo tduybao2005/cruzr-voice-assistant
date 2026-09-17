@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.baxailab.cadebot.ui.theme.*
 
 @Composable
-fun Mộc LamPrimaryButton(
+fun MocLamPrimaryButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -35,8 +35,8 @@ fun Mộc LamPrimaryButton(
         modifier = modifier.height(56.dp),
         shape = RoundedCornerShape(16.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = Mộc LamEspresso,
-            contentColor = Mộc LamOnDark
+            containerColor = MocLamEspresso,
+            contentColor = MocLamOnDark
         )
     ) {
         if (icon != null) {
@@ -48,7 +48,7 @@ fun Mộc LamPrimaryButton(
 }
 
 @Composable
-fun Mộc LamSecondaryButton(
+fun MocLamSecondaryButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -58,8 +58,8 @@ fun Mộc LamSecondaryButton(
         onClick = onClick,
         modifier = modifier.height(56.dp),
         shape = RoundedCornerShape(16.dp),
-        border = androidx.compose.foundation.BorderStroke(1.5.dp, Mộc LamEspresso),
-        colors = ButtonDefaults.outlinedButtonColors(contentColor = Mộc LamEspresso)
+        border = androidx.compose.foundation.BorderStroke(1.5.dp, MocLamEspresso),
+        colors = ButtonDefaults.outlinedButtonColors(contentColor = MocLamEspresso)
     ) {
         if (icon != null) {
             Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(20.dp))
@@ -70,7 +70,7 @@ fun Mộc LamSecondaryButton(
 }
 
 @Composable
-fun Mộc LamTopBar(
+fun MocLamTopBar(
     title: String,
     onBack: (() -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {}
@@ -78,7 +78,7 @@ fun Mộc LamTopBar(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Mộc LamEspresso)
+            .background(MocLamEspresso)
             .statusBarsPadding()
             .padding(horizontal = 16.dp, vertical = 12.dp)
     ) {
@@ -87,7 +87,7 @@ fun Mộc LamTopBar(
                 Icon(
                     imageVector = Icons.Default.Add,
                     contentDescription = "Quay lại",
-                    tint = Mộc LamOnDark,
+                    tint = MocLamOnDark,
                     modifier = Modifier.size(24.dp)
                 )
             }
@@ -95,7 +95,7 @@ fun Mộc LamTopBar(
         Text(
             text = title,
             style = MaterialTheme.typography.headlineSmall,
-            color = Mộc LamOnDark,
+            color = MocLamOnDark,
             modifier = Modifier.align(Alignment.Center)
         )
         Row(modifier = Modifier.align(Alignment.CenterEnd), content = actions)
@@ -103,14 +103,14 @@ fun Mộc LamTopBar(
 }
 
 @Composable
-fun Mộc LamTag(text: String, modifier: Modifier = Modifier) {
+fun MocLamTag(text: String, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(8.dp))
-            .background(Mộc LamLatte)
+            .background(MocLamLatte)
             .padding(horizontal = 10.dp, vertical = 4.dp)
     ) {
-        Text(text = text, style = MaterialTheme.typography.labelSmall, color = Mộc LamCoffee)
+        Text(text = text, style = MaterialTheme.typography.labelSmall, color = MocLamCoffee)
     }
 }
 
@@ -119,7 +119,7 @@ fun PriceText(amount: Int, modifier: Modifier = Modifier, style: androidx.compos
     Text(
         text = "${String.format("%,d", amount)}đ",
         style = style,
-        color = Mộc LamEspresso,
+        color = MocLamEspresso,
         modifier = modifier
     )
 }
@@ -140,14 +140,14 @@ fun QuantityStepper(
             onClick = onDecrease,
             modifier = Modifier
                 .size(40.dp)
-                .border(1.dp, Mộc LamEspresso, CircleShape)
+                .border(1.dp, MocLamEspresso, CircleShape)
         ) {
-            Icon(Icons.Default.Remove, contentDescription = "Giảm", tint = Mộc LamEspresso, modifier = Modifier.size(18.dp))
+            Icon(Icons.Default.Remove, contentDescription = "Giảm", tint = MocLamEspresso, modifier = Modifier.size(18.dp))
         }
         Text(
             text = quantity.toString(),
             style = MaterialTheme.typography.titleLarge,
-            color = Mộc LamEspresso,
+            color = MocLamEspresso,
             modifier = Modifier.widthIn(min = 28.dp),
             textAlign = TextAlign.Center
         )
@@ -155,9 +155,9 @@ fun QuantityStepper(
             onClick = onIncrease,
             modifier = Modifier
                 .size(40.dp)
-                .background(Mộc LamEspresso, CircleShape)
+                .background(MocLamEspresso, CircleShape)
         ) {
-            Icon(Icons.Default.Add, contentDescription = "Tăng", tint = Mộc LamOnDark, modifier = Modifier.size(18.dp))
+            Icon(Icons.Default.Add, contentDescription = "Tăng", tint = MocLamOnDark, modifier = Modifier.size(18.dp))
         }
     }
 }
@@ -172,10 +172,10 @@ fun OptionChip(
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(12.dp))
-            .background(if (selected) Mộc LamEspresso else Mộc LamLightGray)
+            .background(if (selected) MocLamEspresso else MocLamLightGray)
             .border(
                 width = if (selected) 0.dp else 1.dp,
-                color = if (selected) Color.Transparent else Mộc LamLatte,
+                color = if (selected) Color.Transparent else MocLamLatte,
                 shape = RoundedCornerShape(12.dp)
             )
             .clickable(onClick = onClick)
@@ -185,7 +185,7 @@ fun OptionChip(
         Text(
             text = label,
             style = MaterialTheme.typography.labelMedium,
-            color = if (selected) Mộc LamOnDark else Mộc LamCoffee
+            color = if (selected) MocLamOnDark else MocLamCoffee
         )
     }
 }
@@ -195,19 +195,19 @@ fun SectionLabel(text: String, modifier: Modifier = Modifier) {
     Text(
         text = text,
         style = MaterialTheme.typography.titleMedium,
-        color = Mộc LamEspresso,
+        color = MocLamEspresso,
         modifier = modifier.padding(bottom = 8.dp)
     )
 }
 
 @Composable
-fun Mộc LamGradientHeader(content: @Composable BoxScope.() -> Unit) {
+fun MocLamGradientHeader(content: @Composable BoxScope.() -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .background(
                 Brush.verticalGradient(
-                    colors = listOf(Mộc LamEspresso, Mộc LamCoffee)
+                    colors = listOf(MocLamEspresso, MocLamCoffee)
                 )
             )
             .padding(24.dp),

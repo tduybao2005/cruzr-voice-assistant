@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.baxailab.cadebot.ui.components.Mộc LamPrimaryButton
+import com.baxailab.cadebot.ui.components.MocLamPrimaryButton
 import com.baxailab.cadebot.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -37,28 +37,28 @@ fun PaymentScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam),
+            .background(MocLamFoam),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Brush.verticalGradient(listOf(Mộc LamEspresso, Mộc LamCoffee)))
+                .background(Brush.verticalGradient(listOf(MocLamEspresso, MocLamCoffee)))
                 .statusBarsPadding()
                 .padding(vertical = 20.dp),
             contentAlignment = Alignment.Center
         ) {
-            Text("Thanh toán", style = MaterialTheme.typography.headlineSmall, color = Mộc LamOnDark)
+            Text("Thanh toán", style = MaterialTheme.typography.headlineSmall, color = MocLamOnDark)
         }
 
         Spacer(Modifier.height(32.dp))
 
-        Text("Tổng thanh toán", style = MaterialTheme.typography.titleMedium, color = Mộc LamGray)
+        Text("Tổng thanh toán", style = MaterialTheme.typography.titleMedium, color = MocLamGray)
         Spacer(Modifier.height(8.dp))
         Text(
             text = "${String.format("%,d", totalAmount)}đ",
             style = MaterialTheme.typography.displayMedium,
-            color = Mộc LamEspresso
+            color = MocLamEspresso
         )
 
         Spacer(Modifier.height(32.dp))
@@ -68,15 +68,15 @@ fun PaymentScreen(
             modifier = Modifier
                 .size(220.dp)
                 .clip(RoundedCornerShape(20.dp))
-                .border(3.dp, Mộc LamEspresso, RoundedCornerShape(20.dp))
-                .background(Mộc LamSurface),
+                .border(3.dp, MocLamEspresso, RoundedCornerShape(20.dp))
+                .background(MocLamSurface),
             contentAlignment = Alignment.Center
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("▣", style = MaterialTheme.typography.displayLarge, color = Mộc LamEspresso)
+                Text("▣", style = MaterialTheme.typography.displayLarge, color = MocLamEspresso)
                 Spacer(Modifier.height(8.dp))
-                Text("QR Demo", style = MaterialTheme.typography.titleMedium, color = Mộc LamCoffee)
-                Text("MoMo / VNPay / VietQR", style = MaterialTheme.typography.bodyMedium, color = Mộc LamGray)
+                Text("QR Demo", style = MaterialTheme.typography.titleMedium, color = MocLamCoffee)
+                Text("MoMo / VNPay / VietQR", style = MaterialTheme.typography.bodyMedium, color = MocLamGray)
             }
         }
 
@@ -84,18 +84,18 @@ fun PaymentScreen(
         Text(
             text = "Quét mã QR để thanh toán\nhoặc nhấn xác nhận để giả lập",
             style = MaterialTheme.typography.bodyMedium,
-            color = Mộc LamGray,
+            color = MocLamGray,
             textAlign = TextAlign.Center
         )
 
         Spacer(Modifier.weight(1f))
 
         if (isLoading) {
-            CircularProgressIndicator(color = Mộc LamEspresso, modifier = Modifier.size(40.dp))
+            CircularProgressIndicator(color = MocLamEspresso, modifier = Modifier.size(40.dp))
             Spacer(Modifier.height(12.dp))
-            Text("Đang xử lý thanh toán...", style = MaterialTheme.typography.bodyMedium, color = Mộc LamGray)
+            Text("Đang xử lý thanh toán...", style = MaterialTheme.typography.bodyMedium, color = MocLamGray)
         } else {
-            Mộc LamPrimaryButton(
+            MocLamPrimaryButton(
                 text = "Xác nhận thanh toán (Demo)",
                 onClick = onConfirmPayment,
                 modifier = Modifier

@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.baxailab.cadebot.data.model.CartItem
 import com.baxailab.cadebot.ui.components.PriceText
-import com.baxailab.cadebot.ui.components.Mộc LamPrimaryButton
+import com.baxailab.cadebot.ui.components.MocLamPrimaryButton
 import com.baxailab.cadebot.ui.detail.iceLabel
 import com.baxailab.cadebot.ui.detail.tempLabel
 import com.baxailab.cadebot.ui.detail.toppingLabel
@@ -37,30 +37,30 @@ fun CartScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam)
+            .background(MocLamFoam)
     ) {
         // Top bar
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Brush.verticalGradient(listOf(Mộc LamEspresso, Mộc LamCoffee)))
+                .background(Brush.verticalGradient(listOf(MocLamEspresso, MocLamCoffee)))
                 .statusBarsPadding()
                 .padding(horizontal = 16.dp, vertical = 14.dp)
         ) {
             IconButton(onClick = onBack, modifier = Modifier.align(Alignment.CenterStart)) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = Mộc LamOnDark)
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = MocLamOnDark)
             }
             Text(
                 text = "Giỏ hàng",
                 style = MaterialTheme.typography.headlineSmall,
-                color = Mộc LamOnDark,
+                color = MocLamOnDark,
                 modifier = Modifier.align(Alignment.Center)
             )
             if (!uiState.isEmpty) {
                 Text(
                     text = "${uiState.items.size} món",
                     style = MaterialTheme.typography.labelMedium,
-                    color = Mộc LamCaramel,
+                    color = MocLamCaramel,
                     modifier = Modifier.align(Alignment.CenterEnd)
                 )
             }
@@ -71,11 +71,11 @@ fun CartScreen(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text("🛒", style = MaterialTheme.typography.displayMedium)
                     Spacer(Modifier.height(12.dp))
-                    Text("Giỏ hàng đang trống", style = MaterialTheme.typography.titleLarge, color = Mộc LamEspresso)
+                    Text("Giỏ hàng đang trống", style = MaterialTheme.typography.titleLarge, color = MocLamEspresso)
                     Spacer(Modifier.height(8.dp))
-                    Text("Hãy chọn món từ thực đơn nhé!", style = MaterialTheme.typography.bodyMedium, color = Mộc LamGray)
+                    Text("Hãy chọn món từ thực đơn nhé!", style = MaterialTheme.typography.bodyMedium, color = MocLamGray)
                     Spacer(Modifier.height(24.dp))
-                    Mộc LamPrimaryButton("Xem thực đơn", onClick = onContinueShopping, modifier = Modifier.width(200.dp))
+                    MocLamPrimaryButton("Xem thực đơn", onClick = onContinueShopping, modifier = Modifier.width(200.dp))
                 }
             }
         } else {
@@ -101,12 +101,12 @@ fun CartScreen(
 
                 // Divider
                 item {
-                    HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp), color = Mộc LamLatte)
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp), color = MocLamLatte)
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text("Tổng cộng", style = MaterialTheme.typography.titleLarge, color = Mộc LamEspresso)
+                        Text("Tổng cộng", style = MaterialTheme.typography.titleLarge, color = MocLamEspresso)
                         PriceText(amount = uiState.totalAmount, style = MaterialTheme.typography.headlineSmall)
                     }
                 }
@@ -122,10 +122,10 @@ fun CartScreen(
                 ) {
                     if (uiState.isPaymentLoading) {
                         Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                            CircularProgressIndicator(color = Mộc LamEspresso)
+                            CircularProgressIndicator(color = MocLamEspresso)
                         }
                     } else {
-                        Mộc LamPrimaryButton(
+                        MocLamPrimaryButton(
                             text = "Thanh toán QR  ${String.format("%,d", uiState.totalAmount)}đ",
                             onClick = onCheckout,
                             modifier = Modifier.fillMaxWidth(),
@@ -146,11 +146,11 @@ private fun TableSelector(
 ) {
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Mộc LamSurface),
+        colors = CardDefaults.cardColors(containerColor = MocLamSurface),
         elevation = CardDefaults.cardElevation(2.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text("📍 Bàn của bạn", style = MaterialTheme.typography.titleMedium, color = Mộc LamEspresso)
+            Text("📍 Bàn của bạn", style = MaterialTheme.typography.titleMedium, color = MocLamEspresso)
             Spacer(Modifier.height(10.dp))
             Row(
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
@@ -161,14 +161,14 @@ private fun TableSelector(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(10.dp))
-                            .background(if (selected) Mộc LamEspresso else Mộc LamLightGray)
+                            .background(if (selected) MocLamEspresso else MocLamLightGray)
                             .clickable { onSelect(table.tableId) }
                             .padding(horizontal = 14.dp, vertical = 8.dp)
                     ) {
                         Text(
                             text = table.displayName,
                             style = MaterialTheme.typography.labelMedium,
-                            color = if (selected) Mộc LamOnDark else Mộc LamCoffee
+                            color = if (selected) MocLamOnDark else MocLamCoffee
                         )
                     }
                 }
@@ -181,7 +181,7 @@ private fun TableSelector(
 private fun CartItemRow(item: CartItem, onRemove: () -> Unit) {
     Card(
         shape = RoundedCornerShape(14.dp),
-        colors = CardDefaults.cardColors(containerColor = Mộc LamSurface),
+        colors = CardDefaults.cardColors(containerColor = MocLamSurface),
         elevation = CardDefaults.cardElevation(1.dp)
     ) {
         Row(
@@ -192,7 +192,7 @@ private fun CartItemRow(item: CartItem, onRemove: () -> Unit) {
             verticalAlignment = Alignment.Top
         ) {
             Column(modifier = Modifier.weight(1f)) {
-                Text(item.menuItem.name, style = MaterialTheme.typography.titleMedium, color = Mộc LamEspresso)
+                Text(item.menuItem.name, style = MaterialTheme.typography.titleMedium, color = MocLamEspresso)
                 Spacer(Modifier.height(4.dp))
                 val opts = buildList {
                     if (item.selectedSize.isNotEmpty()) add(item.selectedSize)
@@ -202,18 +202,18 @@ private fun CartItemRow(item: CartItem, onRemove: () -> Unit) {
                     addAll(item.selectedToppings.map { toppingLabel(it) })
                 }.joinToString(" · ")
                 if (opts.isNotEmpty()) {
-                    Text(opts, style = MaterialTheme.typography.bodyMedium, color = Mộc LamGray,
+                    Text(opts, style = MaterialTheme.typography.bodyMedium, color = MocLamGray,
                         maxLines = 2, overflow = TextOverflow.Ellipsis)
                 }
                 Spacer(Modifier.height(6.dp))
                 Text(
                     "x${item.quantity}  ×  ${String.format("%,d", item.unitPrice)}đ",
-                    style = MaterialTheme.typography.bodyMedium, color = Mộc LamCoffee
+                    style = MaterialTheme.typography.bodyMedium, color = MocLamCoffee
                 )
             }
             Column(horizontalAlignment = Alignment.End) {
                 IconButton(onClick = onRemove, modifier = Modifier.size(32.dp)) {
-                    Icon(Icons.Default.Delete, contentDescription = "Xoá", tint = Mộc LamError, modifier = Modifier.size(18.dp))
+                    Icon(Icons.Default.Delete, contentDescription = "Xoá", tint = MocLamError, modifier = Modifier.size(18.dp))
                 }
                 Spacer(Modifier.height(4.dp))
                 PriceText(amount = item.totalPrice, style = MaterialTheme.typography.titleMedium)

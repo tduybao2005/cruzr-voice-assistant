@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.baxailab.cadebot.ui.components.Mộc LamPrimaryButton
+import com.baxailab.cadebot.ui.components.MocLamPrimaryButton
 import com.baxailab.cadebot.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -36,21 +36,21 @@ fun CallStaffScreen(onBack: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam),
+            .background(MocLamFoam),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Mộc LamEspresso)
+                .background(MocLamEspresso)
                 .statusBarsPadding()
                 .padding(16.dp)
         ) {
             IconButton(onClick = onBack, modifier = Modifier.align(Alignment.CenterStart)) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = Mộc LamOnDark)
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = MocLamOnDark)
             }
             Text("Gọi nhân viên", style = MaterialTheme.typography.headlineSmall,
-                color = Mộc LamOnDark, modifier = Modifier.align(Alignment.Center))
+                color = MocLamOnDark, modifier = Modifier.align(Alignment.Center))
         }
 
         Spacer(Modifier.weight(1f))
@@ -62,13 +62,13 @@ fun CallStaffScreen(onBack: () -> Unit) {
                         modifier = Modifier
                             .size(120.dp)
                             .clip(CircleShape)
-                            .background(Mộc LamCaramel.copy(alpha = 0.2f)),
+                            .background(MocLamCaramel.copy(alpha = 0.2f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
                             Icons.Default.SupportAgent,
                             contentDescription = null,
-                            tint = Mộc LamCaramel,
+                            tint = MocLamCaramel,
                             modifier = Modifier.size(64.dp)
                         )
                     }
@@ -76,17 +76,17 @@ fun CallStaffScreen(onBack: () -> Unit) {
                     Text(
                         text = "Cần hỗ trợ?",
                         style = MaterialTheme.typography.headlineLarge,
-                        color = Mộc LamEspresso
+                        color = MocLamEspresso
                     )
                     Spacer(Modifier.height(8.dp))
                     Text(
                         text = "Nhấn nút bên dưới để gọi nhân viên\nMộc Lam đến hỗ trợ bạn",
                         style = MaterialTheme.typography.bodyLarge,
-                        color = Mộc LamGray,
+                        color = MocLamGray,
                         textAlign = TextAlign.Center
                     )
                     Spacer(Modifier.height(40.dp))
-                    Mộc LamPrimaryButton(
+                    MocLamPrimaryButton(
                         text = "🔔  Gọi nhân viên ngay",
                         onClick = { called = true },
                         modifier = Modifier
@@ -98,7 +98,7 @@ fun CallStaffScreen(onBack: () -> Unit) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Card(
                         shape = RoundedCornerShape(24.dp),
-                        colors = CardDefaults.cardColors(containerColor = Mộc LamSuccess.copy(alpha = 0.1f)),
+                        colors = CardDefaults.cardColors(containerColor = MocLamSuccess.copy(alpha = 0.1f)),
                         modifier = Modifier.padding(horizontal = 32.dp)
                     ) {
                         Column(
@@ -110,20 +110,20 @@ fun CallStaffScreen(onBack: () -> Unit) {
                             Text(
                                 text = "Đã gửi thông báo!",
                                 style = MaterialTheme.typography.headlineMedium,
-                                color = Mộc LamSuccess,
+                                color = MocLamSuccess,
                                 textAlign = TextAlign.Center
                             )
                             Spacer(Modifier.height(8.dp))
                             Text(
                                 text = "Nhân viên Mộc Lam sẽ đến hỗ trợ bạn ngay. Vui lòng đợi trong giây lát.",
                                 style = MaterialTheme.typography.bodyLarge,
-                                color = Mộc LamGray,
+                                color = MocLamGray,
                                 textAlign = TextAlign.Center
                             )
                         }
                     }
                     Spacer(Modifier.height(32.dp))
-                    Mộc LamPrimaryButton(
+                    MocLamPrimaryButton(
                         text = "Về trang chủ",
                         onClick = onBack,
                         modifier = Modifier

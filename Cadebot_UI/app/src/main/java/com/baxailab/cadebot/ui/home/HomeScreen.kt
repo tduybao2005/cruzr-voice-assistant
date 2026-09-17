@@ -38,7 +38,7 @@ fun HomeScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam)
+            .background(MocLamFoam)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -48,7 +48,7 @@ fun HomeScreen(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Brush.verticalGradient(listOf(Mộc LamEspresso, Mộc LamCoffee)))
+                    .background(Brush.verticalGradient(listOf(MocLamEspresso, MocLamCoffee)))
                     .statusBarsPadding()
                     .padding(vertical = 32.dp, horizontal = 24.dp),
                 contentAlignment = Alignment.Center
@@ -57,31 +57,31 @@ fun HomeScreen(
                     Text(
                         text = "☕ MỘC LAM",
                         style = MaterialTheme.typography.labelLarge,
-                        color = Mộc LamCaramel,
+                        color = MocLamCaramel,
                         letterSpacing = 3.composeSp
                     )
                     Spacer(Modifier.height(8.dp))
                     Text(
                         text = "Xin chào!",
                         style = MaterialTheme.typography.displayMedium,
-                        color = Mộc LamOnDark
+                        color = MocLamOnDark
                     )
                     Spacer(Modifier.height(4.dp))
                     Text(
                         text = "Bạn muốn dùng gì hôm nay?",
                         style = MaterialTheme.typography.bodyLarge,
-                        color = Mộc LamLatte,
+                        color = MocLamLatte,
                         textAlign = TextAlign.Center
                     )
                     Spacer(Modifier.height(4.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(Icons.Default.LocalCafe, contentDescription = null,
-                            tint = Mộc LamCaramel, modifier = Modifier.size(14.dp))
+                            tint = MocLamCaramel, modifier = Modifier.size(14.dp))
                         Spacer(Modifier.width(4.dp))
                         Text(
                             text = "Được phục vụ bởi Cadebot L100",
                             style = MaterialTheme.typography.labelSmall,
-                            color = Mộc LamCaramel
+                            color = MocLamCaramel
                         )
                     }
                 }
@@ -108,27 +108,27 @@ fun HomeScreen(
                     icon = Icons.Default.LocalCafe,
                     title = "Bắt đầu đặt món",
                     subtitle = "Chọn từ thực đơn của Mộc Lam",
-                    backgroundColor = Mộc LamEspresso,
-                    textColor = Mộc LamOnDark,
-                    subtitleColor = Mộc LamLatte,
+                    backgroundColor = MocLamEspresso,
+                    textColor = MocLamOnDark,
+                    subtitleColor = MocLamLatte,
                     onClick = onStartOrder
                 )
                 HomeCTAButton(
                     icon = Icons.Default.MicNone,
                     title = "Hỏi Cadebot",
                     subtitle = "Tư vấn AI theo khẩu vị của bạn",
-                    backgroundColor = Mộc LamCaramel,
-                    textColor = Mộc LamEspresso,
-                    subtitleColor = Mộc LamCoffee,
+                    backgroundColor = MocLamCaramel,
+                    textColor = MocLamEspresso,
+                    subtitleColor = MocLamCoffee,
                     onClick = onAskCadebot
                 )
                 HomeCTAButton(
                     icon = Icons.Default.SupportAgent,
                     title = "Gọi nhân viên",
                     subtitle = "Nhân viên Mộc Lam sẽ đến hỗ trợ bạn",
-                    backgroundColor = Mộc LamLightGray,
-                    textColor = Mộc LamEspresso,
-                    subtitleColor = Mộc LamGray,
+                    backgroundColor = MocLamLightGray,
+                    textColor = MocLamEspresso,
+                    subtitleColor = MocLamGray,
                     onClick = onCallStaff
                 )
             }
@@ -170,7 +170,7 @@ private fun BannerCarousel(
                     modifier = Modifier
                         .size(if (pagerState.currentPage == index) 20.dp else 8.dp, 8.dp)
                         .clip(RoundedCornerShape(4.dp))
-                        .background(if (pagerState.currentPage == index) Mộc LamEspresso else Mộc LamLatte)
+                        .background(if (pagerState.currentPage == index) MocLamEspresso else MocLamLatte)
                 )
             }
         }
@@ -190,7 +190,7 @@ private fun BannerCard(campaign: HomeCampaign) {
             modifier = Modifier
                 .fillMaxSize()
                 .background(
-                    Brush.linearGradient(listOf(Mộc LamCoffee, Mộc LamCaramel))
+                    Brush.linearGradient(listOf(MocLamCoffee, MocLamCaramel))
                 )
                 .padding(20.dp)
         ) {
@@ -198,19 +198,19 @@ private fun BannerCard(campaign: HomeCampaign) {
                 Text(
                     text = campaign.title,
                     style = MaterialTheme.typography.headlineSmall,
-                    color = Mộc LamOnDark
+                    color = MocLamOnDark
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
                     text = campaign.subtitle,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Mộc LamCream
+                    color = MocLamCream
                 )
                 Spacer(Modifier.height(8.dp))
                 Text(
                     text = "Xem ngay →",
                     style = MaterialTheme.typography.labelMedium,
-                    color = Mộc LamLatte
+                    color = MocLamLatte
                 )
             }
         }

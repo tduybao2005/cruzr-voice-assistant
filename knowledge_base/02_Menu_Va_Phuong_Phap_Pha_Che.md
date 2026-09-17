@@ -1,14 +1,16 @@
-# THỰC ĐƠN VÀ PHƯƠNG PHÁP PHA CHẾ TẠI CÀ PHÊ MỘC LAM (TỪ CADEBOT UI)
+# THỰC ĐƠN VÀ PHƯƠNG PHÁP PHA CHẾ TẠI CÀ PHÊ MỘC LAM
+
+> Dữ liệu hư cấu, dùng để chạy thử hệ thống.
 
 ## 1. Danh Mục Thực Đơn Chi Tiết
 
 ### A. Cà Phê (Coffee)
-1. **Mộc Lam Latte (Signature):** 55.000 VNĐ - Latte signature của Mộc Lam, vị sữa béo nhẹ và espresso cân bằng. (Tùy chọn nóng/đá, đường 0-100%, đá, topping: extra shot, oat milk, trân châu, thạch).
+1. **Mộc Lam Latte (Signature):** 55.000 VNĐ - Latte signature của quán, vị sữa béo nhẹ và espresso cân bằng. (Tùy chọn nóng/đá, đường 0-100%, đá, topping: extra shot, oat milk, trân châu, thạch).
 2. **Cappuccino:** 50.000 VNĐ - Cappuccino cổ điển với lớp bọt sữa dày mịn, hương espresso đậm đà. (Mặc định uống nóng).
 3. **Americano:** 45.000 VNĐ - Espresso pha loãng với nước nóng, thanh thoát và nhẹ nhàng. (Không ngọt tự nhiên, thích hợp uống nóng/đá).
 
 ### B. Trà (Tea)
-1. **Matcha Latte:** 60.000 VNĐ - Matcha Nhật Bản cao cấp hòa quyện cùng sữa tươi thơm béo. (Có thể đổi sang Oat Milk).
+1. **Matcha Latte:** 60.000 VNĐ - Matcha Nhật Bản hòa quyện cùng sữa tươi thơm béo. (Có thể đổi sang Oat Milk).
 2. **Trà Hoa Nhài:** 40.000 VNĐ - Trà hoa nhài thanh mát, hương thơm tự nhiên dịu nhẹ. (Không cà phê, ngọt thanh).
 3. **Trà Đào Cam Sả:** 45.000 VNĐ - Kết hợp đào, cam và sả tươi, vị chua nhẹ mát lạnh. (Không cà phê).
 

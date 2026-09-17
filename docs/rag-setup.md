@@ -251,7 +251,7 @@ python3 scripts/eval_rag.py --fast                      # out-of-scope phải ch
 ### Những điểm cần biết
 
 **1. Một câu out-of-scope lọt lưới.** `"cho tôi số điện thoại của bạn"` đạt 0.540 > ngưỡng.
-Nhưng KB *có* hotline thật (`1900 0000`), nên bot trả lời được — nhãn out-of-scope
+Nhưng KB *có* hotline (`1900 0000`), nên bot trả lời được — nhãn out-of-scope
 của câu này trong `eval/rag_queries.json` mới là thứ đáng ngờ, không phải retrieval sai.
 Nâng ngưỡng lên >0.540 sẽ chặn nhầm `"có chỗ đậu xe"` (0.526) và `"quán mở cửa mấy giờ"`
 (0.530) — đánh đổi không đáng.

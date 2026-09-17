@@ -15,8 +15,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.baxailab.cadebot.ui.components.Mộc LamPrimaryButton
-import com.baxailab.cadebot.ui.components.Mộc LamSecondaryButton
+import com.baxailab.cadebot.ui.components.MocLamPrimaryButton
+import com.baxailab.cadebot.ui.components.MocLamSecondaryButton
 import com.baxailab.cadebot.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -34,7 +34,7 @@ fun OrderSuccessScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam),
+            .background(MocLamFoam),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -47,13 +47,13 @@ fun OrderSuccessScreen(
                     modifier = Modifier
                         .size(100.dp)
                         .clip(CircleShape)
-                        .background(Mộc LamSuccess.copy(alpha = 0.12f)),
+                        .background(MocLamSuccess.copy(alpha = 0.12f)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         Icons.Default.CheckCircle,
                         contentDescription = null,
-                        tint = Mộc LamSuccess,
+                        tint = MocLamSuccess,
                         modifier = Modifier.size(64.dp)
                     )
                 }
@@ -62,14 +62,14 @@ fun OrderSuccessScreen(
                 Text(
                     text = "Đặt hàng thành công!",
                     style = MaterialTheme.typography.headlineLarge,
-                    color = Mộc LamEspresso,
+                    color = MocLamEspresso,
                     textAlign = TextAlign.Center
                 )
                 Spacer(Modifier.height(8.dp))
                 Text(
                     text = "Cảm ơn bạn đã chọn Mộc Lam ☕",
                     style = MaterialTheme.typography.bodyLarge,
-                    color = Mộc LamGray,
+                    color = MocLamGray,
                     textAlign = TextAlign.Center
                 )
 
@@ -81,7 +81,7 @@ fun OrderSuccessScreen(
                         .fillMaxWidth()
                         .padding(horizontal = 32.dp),
                     shape = RoundedCornerShape(20.dp),
-                    colors = CardDefaults.cardColors(containerColor = Mộc LamSurface),
+                    colors = CardDefaults.cardColors(containerColor = MocLamSurface),
                     elevation = CardDefaults.cardElevation(3.dp)
                 ) {
                     Column(
@@ -89,11 +89,11 @@ fun OrderSuccessScreen(
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
                         OrderInfoRow(label = "Mã đơn", value = "#${orderId.takeLast(6).uppercase()}")
-                        HorizontalDivider(color = Mộc LamLatte)
+                        HorizontalDivider(color = MocLamLatte)
                         OrderInfoRow(label = "Bàn", value = tableId)
-                        HorizontalDivider(color = Mộc LamLatte)
+                        HorizontalDivider(color = MocLamLatte)
                         OrderInfoRow(label = "Tổng tiền", value = "${String.format("%,d", totalAmount)}đ")
-                        HorizontalDivider(color = Mộc LamLatte)
+                        HorizontalDivider(color = MocLamLatte)
                         OrderInfoRow(label = "Trạng thái", value = "⏳ Đang pha chế")
                     }
                 }
@@ -107,7 +107,7 @@ fun OrderSuccessScreen(
                         .padding(horizontal = 32.dp),
                     shape = RoundedCornerShape(16.dp),
                     colors = CardDefaults.cardColors(
-                        containerColor = Mộc LamCaramel.copy(alpha = 0.15f)
+                        containerColor = MocLamCaramel.copy(alpha = 0.15f)
                     )
                 ) {
                     Row(
@@ -119,7 +119,7 @@ fun OrderSuccessScreen(
                         Text(
                             text = "Cadebot sẽ giao món đến bàn bạn sau khi pha chế xong!",
                             style = MaterialTheme.typography.bodyMedium,
-                            color = Mộc LamCoffee
+                            color = MocLamCoffee
                         )
                     }
                 }
@@ -132,12 +132,12 @@ fun OrderSuccessScreen(
                         .padding(horizontal = 32.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
-                    Mộc LamSecondaryButton(
+                    MocLamSecondaryButton(
                         text = "Gọi thêm món",
                         onClick = onOrderMore,
                         modifier = Modifier.fillMaxWidth()
                     )
-                    Mộc LamPrimaryButton(
+                    MocLamPrimaryButton(
                         text = "Về trang chủ",
                         onClick = onBackHome,
                         modifier = Modifier.fillMaxWidth()
@@ -154,7 +154,7 @@ private fun OrderInfoRow(label: String, value: String) {
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(label, style = MaterialTheme.typography.bodyMedium, color = Mộc LamGray)
-        Text(value, style = MaterialTheme.typography.titleMedium, color = Mộc LamEspresso)
+        Text(label, style = MaterialTheme.typography.bodyMedium, color = MocLamGray)
+        Text(value, style = MaterialTheme.typography.titleMedium, color = MocLamEspresso)
     }
 }

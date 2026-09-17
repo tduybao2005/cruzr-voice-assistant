@@ -103,29 +103,29 @@ fun AiScreen(
     }
 
     val micTint by animateColorAsState(
-        targetValue = if (uiState.isListening) Color.Red else Mộc LamGray,
+        targetValue = if (uiState.isListening) Color.Red else MocLamGray,
         label = "mic_color"
     )
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam)
+            .background(MocLamFoam)
     ) {
         // Top bar
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Brush.verticalGradient(listOf(Mộc LamEspresso, Mộc LamCoffee)))
+                .background(Brush.verticalGradient(listOf(MocLamEspresso, MocLamCoffee)))
                 .statusBarsPadding()
                 .padding(horizontal = 16.dp, vertical = 14.dp)
         ) {
             IconButton(onClick = onBack, modifier = Modifier.align(Alignment.CenterStart)) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = Mộc LamOnDark)
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = MocLamOnDark)
             }
             Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("🤖 Hỏi Cadebot", style = MaterialTheme.typography.headlineSmall, color = Mộc LamOnDark)
-                Text("Trợ lý AI Mộc Lam", style = MaterialTheme.typography.labelSmall, color = Mộc LamLatte)
+                Text("🤖 Hỏi Cadebot", style = MaterialTheme.typography.headlineSmall, color = MocLamOnDark)
+                Text("Trợ lý AI Mộc Lam", style = MaterialTheme.typography.labelSmall, color = MocLamLatte)
             }
         }
 
@@ -133,7 +133,7 @@ fun AiScreen(
         LazyRow(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Mộc LamCream)
+                .background(MocLamCream)
                 .padding(horizontal = 16.dp, vertical = 10.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
@@ -141,11 +141,11 @@ fun AiScreen(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(20.dp))
-                        .background(Mộc LamEspresso)
+                        .background(MocLamEspresso)
                         .clickable { viewModel.sendQuickQuery(query) }
                         .padding(horizontal = 14.dp, vertical = 7.dp)
                 ) {
-                    Text(query, style = MaterialTheme.typography.labelSmall, color = Mộc LamOnDark)
+                    Text(query, style = MaterialTheme.typography.labelSmall, color = MocLamOnDark)
                 }
             }
         }
@@ -170,10 +170,10 @@ fun AiScreen(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Mộc LamCream)
+                    .background(MocLamCream)
                     .padding(12.dp)
             ) {
-                Text("Gợi ý cho bạn:", style = MaterialTheme.typography.labelMedium, color = Mộc LamCoffee)
+                Text("Gợi ý cho bạn:", style = MaterialTheme.typography.labelMedium, color = MocLamCoffee)
                 Spacer(Modifier.height(8.dp))
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     items(uiState.recommendedItems) { item ->
@@ -204,16 +204,16 @@ fun AiScreen(
                                 uiState.isTranscribing -> "Đang nhận diện giọng nói..."
                                 else -> "Hỏi Cadebot về menu..."
                             },
-                            color = Mộc LamGray
+                            color = MocLamGray
                         )
                     },
                     shape = RoundedCornerShape(24.dp),
                     colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = Mộc LamEspresso,
+                        focusedBorderColor = MocLamEspresso,
                         unfocusedBorderColor = when {
                             uiState.isListening -> Color.Red
-                            uiState.isTranscribing -> Mộc LamCaramel
-                            else -> Mộc LamLatte
+                            uiState.isTranscribing -> MocLamCaramel
+                            else -> MocLamLatte
                         }
                     ),
                     singleLine = true,
@@ -223,7 +223,7 @@ fun AiScreen(
                 if (uiState.isTranscribing) {
                     CircularProgressIndicator(
                         modifier = Modifier.size(40.dp),
-                        color = Mộc LamEspresso,
+                        color = MocLamEspresso,
                         strokeWidth = 3.dp
                     )
                 } else {
@@ -263,9 +263,9 @@ fun AiScreen(
                     enabled = !uiState.isListening && !uiState.isTranscribing,
                     modifier = Modifier
                         .size(48.dp)
-                        .background(Mộc LamEspresso, CircleShape)
+                        .background(MocLamEspresso, CircleShape)
                 ) {
-                    Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Gửi", tint = Mộc LamOnDark)
+                    Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Gửi", tint = MocLamOnDark)
                 }
             }
         }
@@ -283,7 +283,7 @@ private fun MessageBubble(message: AiMessage) {
                 modifier = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
-                    .background(Brush.linearGradient(listOf(Mộc LamCoffee, Mộc LamCaramel))),
+                    .background(Brush.linearGradient(listOf(MocLamCoffee, MocLamCaramel))),
                 contentAlignment = Alignment.Center
             ) {
                 Text("🤖", style = MaterialTheme.typography.bodyMedium)
@@ -301,13 +301,13 @@ private fun MessageBubble(message: AiMessage) {
                         bottomStart = 20.dp, bottomEnd = 20.dp
                     )
                 )
-                .background(if (message.isUser) Mộc LamEspresso else Mộc LamSurface)
+                .background(if (message.isUser) MocLamEspresso else MocLamSurface)
                 .padding(horizontal = 16.dp, vertical = 10.dp)
         ) {
             Text(
                 text = message.content,
                 style = MaterialTheme.typography.bodyMedium,
-                color = if (message.isUser) Mộc LamOnDark else Mộc LamEspresso
+                color = if (message.isUser) MocLamOnDark else MocLamEspresso
             )
         }
     }
@@ -320,7 +320,7 @@ private fun TypingIndicator() {
             modifier = Modifier
                 .size(36.dp)
                 .clip(CircleShape)
-                .background(Brush.linearGradient(listOf(Mộc LamCoffee, Mộc LamCaramel))),
+                .background(Brush.linearGradient(listOf(MocLamCoffee, MocLamCaramel))),
             contentAlignment = Alignment.Center
         ) {
             Text("🤖", style = MaterialTheme.typography.bodyMedium)
@@ -328,10 +328,10 @@ private fun TypingIndicator() {
         Box(
             modifier = Modifier
                 .clip(RoundedCornerShape(20.dp))
-                .background(Mộc LamSurface)
+                .background(MocLamSurface)
                 .padding(horizontal = 16.dp, vertical = 10.dp)
         ) {
-            Text("Cadebot đang trả lời...", style = MaterialTheme.typography.bodyMedium, color = Mộc LamGray)
+            Text("Cadebot đang trả lời...", style = MaterialTheme.typography.bodyMedium, color = MocLamGray)
         }
     }
 }
@@ -340,7 +340,7 @@ private fun TypingIndicator() {
 private fun RecommendedItemChip(item: MenuItem, onAdd: () -> Unit) {
     Card(
         shape = RoundedCornerShape(14.dp),
-        colors = CardDefaults.cardColors(containerColor = Mộc LamSurface),
+        colors = CardDefaults.cardColors(containerColor = MocLamSurface),
         elevation = CardDefaults.cardElevation(2.dp),
         modifier = Modifier.width(160.dp)
     ) {
@@ -348,7 +348,7 @@ private fun RecommendedItemChip(item: MenuItem, onAdd: () -> Unit) {
             Text(
                 text = item.name,
                 style = MaterialTheme.typography.titleMedium,
-                color = Mộc LamEspresso,
+                color = MocLamEspresso,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -359,12 +359,12 @@ private fun RecommendedItemChip(item: MenuItem, onAdd: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(8.dp))
-                    .background(Mộc LamEspresso)
+                    .background(MocLamEspresso)
                     .clickable(onClick = onAdd)
                     .padding(vertical = 6.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Text("+ Thêm vào giỏ", style = MaterialTheme.typography.labelSmall, color = Mộc LamOnDark)
+                Text("+ Thêm vào giỏ", style = MaterialTheme.typography.labelSmall, color = MocLamOnDark)
             }
         }
     }

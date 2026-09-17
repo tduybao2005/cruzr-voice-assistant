@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.baxailab.cadebot.data.model.MenuItem
 import com.baxailab.cadebot.ui.components.PriceText
-import com.baxailab.cadebot.ui.components.Mộc LamTag
+import com.baxailab.cadebot.ui.components.MocLamTag
 import com.baxailab.cadebot.ui.theme.*
 import androidx.compose.ui.unit.sp
 
@@ -37,23 +37,23 @@ fun MenuScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Mộc LamFoam)
+            .background(MocLamFoam)
     ) {
         // Top bar
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Brush.verticalGradient(listOf(Mộc LamEspresso, Mộc LamCoffee)))
+                .background(Brush.verticalGradient(listOf(MocLamEspresso, MocLamCoffee)))
                 .statusBarsPadding()
                 .padding(horizontal = 16.dp, vertical = 14.dp)
         ) {
             IconButton(onClick = onBack, modifier = Modifier.align(Alignment.CenterStart)) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = Mộc LamOnDark)
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Quay lại", tint = MocLamOnDark)
             }
             Text(
                 text = "Thực đơn",
                 style = MaterialTheme.typography.headlineSmall,
-                color = Mộc LamOnDark,
+                color = MocLamOnDark,
                 modifier = Modifier.align(Alignment.Center)
             )
             BadgedBox(
@@ -63,7 +63,7 @@ fun MenuScreen(
                 modifier = Modifier.align(Alignment.CenterEnd)
             ) {
                 IconButton(onClick = onCartClick) {
-                    Icon(Icons.Default.ShoppingCart, contentDescription = "Giỏ hàng", tint = Mộc LamOnDark)
+                    Icon(Icons.Default.ShoppingCart, contentDescription = "Giỏ hàng", tint = MocLamOnDark)
                 }
             }
         }
@@ -72,7 +72,7 @@ fun MenuScreen(
         LazyRow(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Mộc LamCoffee)
+                .background(MocLamCoffee)
                 .padding(horizontal = 16.dp, vertical = 10.dp),
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
@@ -81,7 +81,7 @@ fun MenuScreen(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(20.dp))
-                        .background(if (selected) Mộc LamCaramel else Mộc LamEspresso)
+                        .background(if (selected) MocLamCaramel else MocLamEspresso)
                         .clickable { viewModel.selectCategory(category.id) }
                         .padding(horizontal = 16.dp, vertical = 8.dp),
                     contentAlignment = Alignment.Center
@@ -89,7 +89,7 @@ fun MenuScreen(
                     Text(
                         text = "${category.iconEmoji} ${category.name}",
                         style = MaterialTheme.typography.labelMedium,
-                        color = if (selected) Mộc LamEspresso else Mộc LamLatte
+                        color = if (selected) MocLamEspresso else MocLamLatte
                     )
                 }
             }
@@ -115,7 +115,7 @@ private fun MenuItemCard(item: MenuItem, onClick: () -> Unit) {
             .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Mộc LamSurface),
+        colors = CardDefaults.cardColors(containerColor = MocLamSurface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
@@ -130,7 +130,7 @@ private fun MenuItemCard(item: MenuItem, onClick: () -> Unit) {
                 modifier = Modifier
                     .size(88.dp)
                     .clip(RoundedCornerShape(12.dp))
-                    .background(Brush.linearGradient(listOf(Mộc LamCoffee, Mộc LamCaramel))),
+                    .background(Brush.linearGradient(listOf(MocLamCoffee, MocLamCaramel))),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -148,18 +148,18 @@ private fun MenuItemCard(item: MenuItem, onClick: () -> Unit) {
                     Text(
                         text = item.name,
                         style = MaterialTheme.typography.titleLarge,
-                        color = Mộc LamEspresso,
+                        color = MocLamEspresso,
                         modifier = Modifier.weight(1f)
                     )
                     if (!item.available) {
-                        Mộc LamTag(text = "Hết", modifier = Modifier.padding(start = 8.dp))
+                        MocLamTag(text = "Hết", modifier = Modifier.padding(start = 8.dp))
                     }
                 }
                 Spacer(Modifier.height(4.dp))
                 Text(
                     text = item.description,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Mộc LamGray,
+                    color = MocLamGray,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -174,8 +174,8 @@ private fun MenuItemCard(item: MenuItem, onClick: () -> Unit) {
                         style = MaterialTheme.typography.titleMedium
                     )
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        if (item.tags.contains("best_seller")) Mộc LamTag("⭐ Best")
-                        if (!item.attributes.caffeine) Mộc LamTag("No caffeine")
+                        if (item.tags.contains("best_seller")) MocLamTag("⭐ Best")
+                        if (!item.attributes.caffeine) MocLamTag("No caffeine")
                     }
                 }
             }
