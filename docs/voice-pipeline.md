@@ -52,7 +52,7 @@ PARAMETER num_ctx 2048
 PARAMETER repeat_penalty 1.1
 ```
 
-File GGUF gốc: `Qwen2.5-3B-fine-tuned/cadebot-moclam.gguf` (3.1 GB trên disk)
+File GGUF gốc: `cruzr-voice-assistant/cadebot-moclam.gguf` (3.1 GB trên disk)
 
 ---
 

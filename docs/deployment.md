@@ -193,7 +193,7 @@ curl -s http://127.0.0.1:11434/api/embed \
 cd <path-to>/dify/docker && docker compose --profile postgresql --profile qdrant up -d
 
 # 3. Let Dify's containers reach Ollama (it listens on 127.0.0.1 only).
-cd <path-to>/Qwen2.5-3B-fine-tuned
+cd <path-to>/cruzr-voice-assistant
 python3 knowledge_base/ollama_docker_bridge.py &
 
 # 4. Configure Cadebot.

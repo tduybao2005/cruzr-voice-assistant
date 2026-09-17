@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Before filing: check the troubleshooting table in
-        [docs/deployment.md](https://github.com/tduybao7605/Qwen2.5-3B-fine-tuned/blob/main/docs/deployment.md#troubleshooting).
+        [docs/deployment.md](https://github.com/tduybao2005/cruzr-voice-assistant/blob/main/docs/deployment.md#troubleshooting).
         It covers the Dify network, the Dataset API key, HTTP 524 and first-boot weight downloads.
 
   - type: dropdown

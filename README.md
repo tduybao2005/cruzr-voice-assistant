@@ -1,13 +1,17 @@
-# Cadebot
+# Cruzr Voice Assistant
 
-[![CI](https://github.com/tduybao7605/Qwen2.5-3B-fine-tuned/actions/workflows/ci.yml/badge.svg)](https://github.com/tduybao7605/Qwen2.5-3B-fine-tuned/actions/workflows/ci.yml)
+[![CI](https://github.com/tduybao2005/cruzr-voice-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/tduybao2005/cruzr-voice-assistant/actions/workflows/ci.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A Vietnamese-language voice assistant for coffee shops. A tablet at the table
-listens, transcribes, answers questions about the menu, and drafts an order —
-running on a fine-tuned 3B model that is grounded in the shop's own knowledge
-base, so it declines to answer rather than inventing a price.
+A Vietnamese-language voice assistant for coffee shops. It listens, transcribes,
+answers questions about the menu, and drafts an order — running on a fine-tuned
+3B model that is grounded in the shop's own knowledge base, so it declines to
+answer rather than inventing a price.
+
+The project began under the name **Cadebot**, which is why the Python package
+and the Android application ID still read `cadebot`. It was later retargeted to
+run with a **UBTECH Cruzr** service robot, and that is the form it shipped in.
 
 **Stack:** FastAPI · PhoWhisper-large (STT) · Qwen2.5-3B-Instruct + LoRA ·
 BGE-M3 retrieval over Dify + Qdrant · Jetpack Compose (Android) · Docker Compose
@@ -35,7 +39,7 @@ after that, [docs/deployment.md](docs/deployment.md) is the operations manual.
 
 ```mermaid
 flowchart LR
-    android["Android tablet"] --> tunnel["Cloudflare Tunnel"]
+    android["Android client"] --> tunnel["Cloudflare Tunnel"]
     tunnel --> api["FastAPI<br/>cadebot-api :8000"]
     api --> stt["PhoWhisper-large<br/>speech to text"]
     api --> llm["Qwen2.5-3B + LoRA<br/>answer generation"]
@@ -79,8 +83,8 @@ Order matters: Dify has to exist before the Cadebot container starts, because
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/tduybao7605/Qwen2.5-3B-fine-tuned.git
-cd Qwen2.5-3B-fine-tuned
+git clone https://github.com/tduybao2005/cruzr-voice-assistant.git
+cd cruzr-voice-assistant
 ```
 
 The LoRA adapter under `cadebot-lora/` is stored with Git LFS. If `git lfs` was
@@ -278,7 +282,7 @@ recognition runs on our own PhoWhisper-large, so there is no third-party service
 and no API key to obtain.
 
 A prebuilt debug APK is attached to the
-[v1.0.0 release](https://github.com/tduybao7605/Qwen2.5-3B-fine-tuned/releases/tag/v1.0.0).
+[v1.0.0 release](https://github.com/tduybao2005/cruzr-voice-assistant/releases/tag/v1.0.0).
 It is compiled with the default `http://10.0.2.2:8000`, which only works from an
 Android emulator running on the same machine as the server — **for a real device
 you must rebuild** with your own server address:

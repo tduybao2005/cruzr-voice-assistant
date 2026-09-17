@@ -7,8 +7,8 @@ looks like.
 ## Development setup
 
 ```bash
-git clone https://github.com/tduybao7605/Qwen2.5-3B-fine-tuned.git
-cd Qwen2.5-3B-fine-tuned
+git clone https://github.com/tduybao2005/cruzr-voice-assistant.git
+cd cruzr-voice-assistant
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python3 -m pytest tests/ -q
